@@ -3,11 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 class AboutInheritance < EdgeCase::Koan
   class Dog
     attr_reader :name
-
+    
     def initialize(name)
       @name = name
     end
-
+    
     def bark
       "WOOF"
     end
@@ -17,14 +17,14 @@ class AboutInheritance < EdgeCase::Koan
     def wag
       :happy
     end
-
+    
     def bark
       "yip"
     end
   end
 
   def test_subclasses_have_the_parent_as_an_ancestor
-    assert_equal __, Chihuahua.ancestors.include?(Dog)
+    assert_equal true, Chihuahua.ancestors.include?(Dog)
   end
 
   def test_all_classes_ultimately_inherit_from_object
