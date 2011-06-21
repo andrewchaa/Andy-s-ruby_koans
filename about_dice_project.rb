@@ -6,6 +6,20 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 #   code ...
 # end
 
+class DiceSet
+  attr_accessor :values  
+  
+  def roll(number)
+    i = 0
+    @values = Array.new
+    
+    while i < number
+      @values << (1 + rand(6))
+      i += 1
+    end
+  end
+end
+
 class AboutDiceProject < EdgeCase::Koan
   def test_can_create_a_dice_set
     dice = DiceSet.new

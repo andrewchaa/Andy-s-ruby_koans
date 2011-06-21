@@ -5,7 +5,7 @@ class AboutHashes < EdgeCase::Koan
     empty_hash = Hash.new
     
     assert_equal Hash, empty_hash.class
-    assert_equal ({}, empty_hash)
+    assert_equal({}, empty_hash)
     assert_equal 0, empty_hash.size
   end
 
